@@ -2,10 +2,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+
+// Answers according to GPT
 public class App {
     public static void main(String[] args) throws Exception {
     Scanner sc = new Scanner(System.in);  // Question - is this better or should i initialize and close it in each method?
-    
+    // Ans - initialize once in main() and pass it as a parameter - prevent resource leaks
+
     byte exercise = readByte(sc, "Which exercise do you want to run? (1, 2 or 3): ");
 
     switch (exercise) {
@@ -78,6 +81,7 @@ public class App {
             soundByte = readByte(sc, "Choose a sound (1-car, 2-dog, 3-vespa, 4-duck): ");
             
             // Verify answer -> QUESTION should this be integrated into the default case?
+            // ans - Best practice: Validation before switch
             while (soundByte > 4) {
                 soundByte = readByte(sc, "Upsss I don't know that sound. Options are: 1-car, 2-dog, 3-vespa, 4-duck.\nChoose a sound: ");
             }
@@ -133,6 +137,8 @@ public class App {
     }
 
     // Question - how to create a "module" with utils like the methods bellow
+    // Ans - can be added in src/utils/ClassName.java (add package utils; at the top of the sceen)
+    // then import as utils.ClassName
     public static byte readByte(Scanner sc, String prompt) {
         while (true) {
             System.out.print(prompt);
