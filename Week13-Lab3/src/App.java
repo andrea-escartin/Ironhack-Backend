@@ -25,6 +25,53 @@ public class App {
     sc.close();
     }
 
+    public static void exercise1Switch(Scanner sc) {
+        System.out.print("What's your fav season?: ");
+        String station = sc.nextLine();
+        station = station.toLowerCase();
+        switch (station) {
+            case "spring":
+                System.out.println("Spring is in the air");
+                break;
+            case "summer":
+                System.out.println("Summer dog days");
+                break;
+            case "fall":
+            case "autumn":
+                System.out.println("Leaves are falling");
+                break;
+            case "winter":
+                System.out.println("Brrr COLD!");
+                break;
+            default:
+                System.out.println("Did not recognize this season");
+                break;
+        }
+    }
+
+    public static void exercise2While(Scanner sc) {
+        // ensure answer is one of the accepted ones
+        String ans = askForHelp(sc);
+
+        // Ask for money as they say yes
+        float money = 0;
+        int help = 0;
+        while (isYes(ans)) {
+            float moneyGiven = readFloat(sc, "How much money do you want to give? ");
+            money += moneyGiven;
+            help++;
+            ans = askForHelp(sc);
+        }
+
+        if (ans.equalsIgnoreCase("no") || ans.equalsIgnoreCase("n")) {
+            System.out.println("Sad... I'm going to leave");
+        }
+
+        if (help > 0) {
+            System.out.printf("I got %.2f euros from %d people", money, help);
+        }
+    }
+
     public static void exercise3DoWhileSwitch(Scanner sc) {
         byte soundByte;
         String cont = "y";
@@ -67,30 +114,7 @@ public class App {
 
     private static boolean isYes(String str) {
         return str.equalsIgnoreCase("yes") || str.equalsIgnoreCase("y");
-    }
-
-    public static void exercise2While(Scanner sc) {
-        // ensure answer is one of the accepted ones
-        String ans = askForHelp(sc);
-
-        // Ask for money as they say yes
-        float money = 0;
-        int help = 0;
-        while (isYes(ans)) {
-            float moneyGiven = readFloat(sc, "How much money do you want to give?");
-            money += moneyGiven;
-            help++;
-            ans = askForHelp(sc);
-        }
-
-        if (ans.equalsIgnoreCase("no") || ans.equalsIgnoreCase("n")) {
-            System.out.println("Sad... I'm going to leave");
-        }
-
-        if (help > 0) {
-            System.out.printf("I got %.2f euros from %d people", money, help);
-        }
-    }
+    }  
 
     private static String askForHelp(Scanner sc) {
         System.out.print("A little help please? ");
@@ -109,30 +133,7 @@ public class App {
         return ans;
     }
 
-    public static void exercise1Switch(Scanner sc) {
-        System.out.print("What's your fav season?: ");
-        String station = sc.nextLine();
-        station = station.toLowerCase();
-        switch (station) {
-            case "spring":
-                System.out.println("Spring is in the air");
-                break;
-            case "summer":
-                System.out.println("Summer dog days");
-                break;
-            case "fall":
-            case "autumn":
-                System.out.println("Leaves are falling");
-                break;
-            case "winter":
-                System.out.println("Brrr COLD!");
-                break;
-            default:
-                System.out.println("Did not recognize this season");
-                break;
-        }
-    }
-
+    // Question - how to create a "module" with utils like the methods bellow
     public static byte readByte(Scanner sc, String prompt) {
         while (true) {
             System.out.print(prompt);
@@ -142,7 +143,7 @@ public class App {
                 return val;
             }
             sc.nextLine(); // discard invalid input
-            System.out.println("Invalid input. Please enter a number.");
+            System.out.println("Invalid input. Please enter a number (byte).");
         }
     }
 
@@ -156,7 +157,7 @@ public class App {
                 return val;
             }
             sc.nextLine();
-            System.out.println("Invalid input. Please enter a whole number.");
+            System.out.println("Invalid input. Please enter a whole number (int).");
         }
     }
 
@@ -169,7 +170,7 @@ public class App {
                 return val;
             }
             sc.nextLine();
-            System.out.println("Invalid input. Please enter a decimal number.");
+            System.out.println("Invalid input. Please enter a decimal number (float).");
         }
     }
 
