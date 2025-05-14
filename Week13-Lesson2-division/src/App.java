@@ -9,6 +9,7 @@ public class App {
         float divFloat = num1/num2;
         System.out.println("Float result is: " + divFloat);
 
+        // we need to cast, else the division is an int division and the int result is assinged to a float
         float divFloatCast = (float) num1/num2;
         System.out.println("Float result casted is: " + divFloatCast);
     }
