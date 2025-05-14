@@ -53,7 +53,6 @@ public class App {
         // ensure answer is one of the accepted ones
         String ans = askForHelp(sc);
 
-        // Ask for money as they say yes
         float money = 0;
         int help = 0;
         while (isYes(ans)) {
