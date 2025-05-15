@@ -11,7 +11,7 @@ public class App {
         // exercise5(sc);
         // exercise6(sc);
         // Implemented 2 methods, naive pythonic one (method = 1) and Java specific one (method = 2)
-        // Both methods behave the same, but first one is not efficient. Keeping to be aware of bad practice.
+        // Both methods behave the same, but first one is not efficient. Keeping it to be aware of bad practice.
         int method = 2;
         extraExercise(sc, method); 
         sc.close();
@@ -101,7 +101,7 @@ public class App {
         String color = "purple";
         System.out.print("Guess my favourite color: ");
         String userColor = sc.nextLine();
-        int attempt = 0;  // chagnge to 1 if first
+        int attempt = 0;  // chagnge to 1 if first attempt counts
         String prompt = "No, that's not my favourite color. Guess again";
         while (attempt<3 && !color.equalsIgnoreCase(userColor)) {
             ++attempt;
