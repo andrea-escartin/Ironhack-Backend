@@ -77,7 +77,14 @@ public class App {
 
     private static void exercise1(Scanner sc) {
         int arraySize = readInt(sc, "How big should the array be? ");
-        int[] array = generateRandomIntArray(arraySize);
+        // int[] array = generateRandomIntArray(arraySize);
+        int n;
+        int [] array = new int[arraySize];
+        for (int i = 0; i < array.length; i++) {
+            n = readInt(sc, "Tell me a number: ");
+            array[i] = n;
+
+        }
         System.out.printf("Your array i: %s", Arrays.toString(array));
     }
 
