@@ -8,6 +8,12 @@ public class App {
 
         // exercise1(sc);
         // exercise2();
+        exercise3(sc);
+    
+        sc.close();
+    }
+
+    private static void exercise3(Scanner sc) {
         String [] names = {"Andrea", "Sara", "Marta", "Carla", "Maria", "Julia"};
         int len = names.length;
         String ans;
@@ -20,9 +26,6 @@ public class App {
             ans = verifyAnswer(sc, ans, "Do you want to draw another winner? ");
             
         } while (isYes(ans));
-        
-
-        sc.close();
     }
 
     private static boolean isYes(String str) {
