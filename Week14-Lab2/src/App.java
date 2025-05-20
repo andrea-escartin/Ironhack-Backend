@@ -6,9 +6,35 @@ public class App {
         Scanner sc = new Scanner(System.in);
         // exercise1();
         // exercise2(sc);
-        exercise3();
+        // exercise3();
+        extra();
         sc.close();
 
+    }
+
+    private static void extra() {
+        ArrayList<String> list1 = new ArrayList<>();
+        list1.add("a");
+        list1.add("b");
+        list1.add("c");
+
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("x");
+        list2.add("y");
+        list2.add("z");
+
+        ArrayList<ArrayList<String>> combined = new ArrayList<>();
+        combined.add(list1);
+        combined.add(list2);
+
+        // Read second element of second array
+        String val1 = combined.get(1).get(1);
+        System.out.println("Second element of second ArrayList: " + val1);
+
+        // Modify the third element of the first ArrayList
+        combined.get(0).set(2, "new_value");
+
+        System.out.println("Modified third element of first ArrayList: " + combined.toString());
     }
 
     private static void exercise3() {
