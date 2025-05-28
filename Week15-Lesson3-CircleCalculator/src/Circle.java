@@ -6,9 +6,7 @@ public class Circle {
 
     // Constructor
     public Circle(double r){
-        this.r = r;
-        this.circumference = calculateCircumference();
-        this.area = calculateArea();
+        setR(r);
     }
 
     // Getters and Setters
@@ -17,9 +15,13 @@ public class Circle {
     }
 
     public void setR(double r) {
-        this.r = r;
-        this.circumference = calculateCircumference();
-        this.area = calculateArea();
+        if (r>0) {
+            this.r = r;
+            this.circumference = calculateCircumference();
+            this.area = calculateArea();
+        } else {
+            throw new IllegalArgumentException("Radius must be greater than 0");
+        }
     }
 
     public double getPI() {
@@ -45,11 +47,10 @@ public class Circle {
 
     // Public Methods
     public String evaluateCircumference() {
-        double circumference = calculateCircumference();
-        if (circumference<=5) {
+        if (this.circumference<=5) {
             return "too short";
         } 
-        else if(circumference > 50){
+        else if(this.circumference > 50){
             return "too big";
         }
         else {
