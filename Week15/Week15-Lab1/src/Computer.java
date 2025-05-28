@@ -84,7 +84,7 @@ public class Computer {
     // Discount method
     public void applyDiscount(double discountPercent) {
         if (discountPercent > 0 && discountPercent <= 100) {
-            price -= price * (discountPercent / 100);
+            this.price -= this.price * (discountPercent / 100);
         }
     }
 }
