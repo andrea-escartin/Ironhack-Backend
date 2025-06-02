@@ -38,7 +38,7 @@ public class App {
                 case 4:
                     System.out.print("Which product do you want to update? ");
                     prodName = sc.nextLine();
-                    newPrice = readDouble(sc, "What's the new price?");
+                    newPrice = readDouble(sc, "What's the new price? ");
                     cart.updateProductPrice(prodName, newPrice);
                     break;
                 case 5:
