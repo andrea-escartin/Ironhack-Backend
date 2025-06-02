@@ -50,14 +50,14 @@ public class App {
                     System.out.print("Which item price do you want to check? ");
                     prodName = sc.nextLine();
                     itemPrice = cart.getProductPriceByName(prodName);
-                    System.out.printf("Item price based on the added weight is: %f", itemPrice);
+                    System.out.printf("Item price based on the added weight is: %f\n", itemPrice);
                     break;
                 case 7:
                     totalPrice = cart.calculateTotalPrice();
-                    System.out.printf("Total price is: %f", totalPrice);
+                    System.out.printf("Total price is: %f\n", totalPrice);
                     break;
                 default:
-                    System.out.println("Did not recognize this option. ");;
+                    System.out.println("Did not recognize this option.");;
             }
         } while (option != 0);
 

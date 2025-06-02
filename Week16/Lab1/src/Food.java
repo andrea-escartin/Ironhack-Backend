@@ -46,6 +46,16 @@ public class Food {
     public double calculatePrice(){
         return this.weight * this.pricePerKg;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " name='" + getName() + "'" +
+            ", origin='" + getOrigin() + "'" +
+            ", weight='" + getWeight() + "'" +
+            ", pricePerKg='" + getPricePerKg() + "'" +
+            "}";
+    }
     
 
 }
