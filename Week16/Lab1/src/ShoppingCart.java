@@ -28,6 +28,11 @@ public class ShoppingCart {
     public void addItem(Scanner sc) {
         System.out.print("What's the name of the product?: ");
         String name = sc.nextLine();
+        int pos = getItemPositionByName(name);
+        if (pos >= 0) {
+            System.out.println("Item already exists. Please modify it or add a different one.");
+            return;
+        }
         System.out.print("What's the product origin? ");
         String origin = sc.nextLine();
         double weight = MyUtils.readDouble(sc, "What's the weight of the product (kg)? ");
