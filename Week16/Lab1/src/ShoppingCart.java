@@ -30,8 +30,8 @@ public class ShoppingCart {
         String name = sc.nextLine();
         System.out.print("What's the product origin? ");
         String origin = sc.nextLine();
-        double weight = readDouble(sc, "What's the weight of the product (kg)? ");
-        double pricePerKg = readDouble(sc, "What's the product's price per kg? ");
+        double weight = MyUtils.readDouble(sc, "What's the weight of the product (kg)? ");
+        double pricePerKg = MyUtils.readDouble(sc, "What's the product's price per kg? ");
         this.items.add(new Food(name, origin, weight, pricePerKg));
     }
 
@@ -73,19 +73,6 @@ public class ShoppingCart {
         int pos = getItemPositionByName(name);
         this.items.get(pos).setPricePerKg(price);
         System.out.printf("Price of %s updated to %f\n", this.items.get(pos).getName(), this.items.get(pos).getPricePerKg());
-    }
-
-    public static double readDouble(Scanner sc, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            if (sc.hasNextDouble()) {
-                double val = sc.nextDouble();
-                sc.nextLine();
-                return val;
-            }
-            sc.nextLine();
-            System.out.println("Invalid input. Please enter a number (double).");
-        }
     }
 
     public void printItemsinCart(){

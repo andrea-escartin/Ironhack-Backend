@@ -19,7 +19,7 @@ public class App {
         double itemPrice;
         ShoppingCart cart = new ShoppingCart();
         do {
-            option = readInt(sc, prompt);
+            option = MyUtils.readInt(sc, prompt);
             switch (option) {
                 case 0:
                     System.out.println("Exiting the system...");
@@ -38,7 +38,7 @@ public class App {
                 case 4:
                     System.out.print("Which product do you want to update? ");
                     prodName = sc.nextLine();
-                    newPrice = readDouble(sc, "What's the new price? ");
+                    newPrice = MyUtils.readDouble(sc, "What's the new price? ");
                     cart.updateProductPrice(prodName, newPrice);
                     break;
                 case 5:
@@ -62,33 +62,5 @@ public class App {
         } while (option != 0);
 
         sc.close();
-    }
-
-
-    // TODO move to utils
-    public static int readInt(Scanner sc, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            if (sc.hasNextInt()) {
-                int val = sc.nextInt();
-                sc.nextLine();
-                return val;
-            }
-            sc.nextLine();
-            System.out.println("Invalid input. Please enter a whole number (int).");
-        }
-    }
-
-    public static double readDouble(Scanner sc, String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            if (sc.hasNextDouble()) {
-                double val = sc.nextDouble();
-                sc.nextLine();
-                return val;
-            }
-            sc.nextLine();
-            System.out.println("Invalid input. Please enter a number (double).");
-        }
     }
 }
