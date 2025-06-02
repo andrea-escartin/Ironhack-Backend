@@ -1,12 +1,41 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        exercise1(sc);
+        // exercise1(sc);
         sc.close();
+
+        exercise2();
+    }
+
+    private static void exercise2() {
+        ArrayList<String> cities = new ArrayList<>();
+        // Fill arraylist with 20 cities
+        for (int i = 1; i <= 20; i++) {
+            cities.add("City" + i);
+        }
+
+        // Select and print 3 random cities
+        for (int i = 0; i < 3; i++) {
+            int randomIndex = getRandomIndex(cities.size());
+            String selectedCity = cities.get(randomIndex);
+            System.out.println("Selected city: " + selectedCity);
+            // Use debugger to observe:
+            // - The value of i (loop index)
+            // - The value of randomIndex
+            // - The selected city
+        }
+    }
+
+    public static int getRandomIndex(int upperBound) {
+        Random rand = new Random();
+        int result = rand.nextInt(upperBound);
+        // Set a breakpoint here to trace when it jumps from main to this method
+        return result;
     }
 
     private static void exercise1(Scanner sc) {
