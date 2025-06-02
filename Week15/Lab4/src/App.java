@@ -1,6 +1,12 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        exercise1();
+        Scanner sc = new Scanner(System.in);
+        exercise1(sc);
+        sc.close();
     }
 
     private static void exercise1(Scanner sc) {
@@ -51,6 +57,32 @@ public class App {
         System.out.println("New record added. Full list:");
         for (VinylRecord record : records) {
             System.out.println(record);
+        }
+    }
+
+    public static int readInt(Scanner sc, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (sc.hasNextInt()) {
+                int val = sc.nextInt();
+                sc.nextLine();
+                return val;
+            }
+            sc.nextLine();
+            System.out.println("Invalid input. Please enter a whole number (int).");
+        }
+    }
+
+    public static double readDouble(Scanner sc, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            if (sc.hasNextDouble()) {
+                double val = sc.nextDouble();
+                sc.nextLine();
+                return val;
+            }
+            sc.nextLine();
+            System.out.println("Invalid input. Please enter a number (double).");
         }
     }
 }
