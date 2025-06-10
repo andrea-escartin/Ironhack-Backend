@@ -2,18 +2,11 @@ public class StorageRoom extends Building {
     private boolean security;
 
     public StorageRoom(double surface, double price, String location, boolean security) {
-        this.surface = surface;
-        this.price = price;
-        this.location = location;
+        super(surface, price, location, "storage room");
         this.security = security;
-        this.type = "storage room";
     }
 
     public boolean isSecurity() {
-        return this.security;
-    }
-
-    public boolean getSecurity() {
         return this.security;
     }
 

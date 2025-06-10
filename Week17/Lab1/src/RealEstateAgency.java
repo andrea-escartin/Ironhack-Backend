@@ -2,17 +2,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class RealStateAgency {
+public class RealEstateAgency {
     private ArrayList<Building> listings = new ArrayList<Building>();
-    private final String[] listingTypes = {"house", "appartment", "storage room"};
+    private static final String[] LISTING_TYPES = {"house", "apartment", "storage room"};
 
     // Constructor
-    public RealStateAgency(ArrayList<Building> listings) {
+    public RealEstateAgency(ArrayList<Building> listings) {
         this.listings = listings;
     }
 
     // Constructor with empty listings
-    public RealStateAgency() {
+    public RealEstateAgency() {
     }
 
     // Getters/Setters
@@ -28,15 +28,15 @@ public class RealStateAgency {
     public ArrayList<Building> getBuildingByType(String type){
         ArrayList<Building> buildings = new ArrayList<>();
         
-        if (!Arrays.asList(this.listingTypes).contains(type)){
-            System.out.println("Building type not recognized. This real state agency only handles: " + Arrays.toString(listingTypes));
+        if (!Arrays.asList(LISTING_TYPES).contains(type)){
+            System.out.println("Building type not recognized. This real estate agency only handles: " + Arrays.toString(LISTING_TYPES));
             return buildings;
         }
 
         for (Building b : this.listings){
             if (type.equalsIgnoreCase("house") && b instanceof House) {
                 buildings.add(b);
-            } else if (type.equalsIgnoreCase("appartment") && b instanceof Appartment) {
+            } else if (type.equalsIgnoreCase("apartment") && b instanceof Apartment) {
                 buildings.add(b);
             } else if (type.equalsIgnoreCase("storage room") && b instanceof StorageRoom) {
                 buildings.add(b);

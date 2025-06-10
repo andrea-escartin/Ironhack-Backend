@@ -2,11 +2,8 @@ public class House extends Building {
     private boolean attached;
 
     public House(double surface, double price, String location, boolean attached) {
-        this.surface = surface;
-        this.price = price;
-        this.location = location;
+        super(surface, price, location, "house");
         this.attached = attached;
-        this.type = "house";
     }
 
     public boolean isAttached() {

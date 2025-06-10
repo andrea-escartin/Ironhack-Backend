@@ -1,14 +1,11 @@
-public class Appartment extends Building {
+public class Apartment extends Building {
     private final Integer floor;
     private boolean elevator;
 
-    public Appartment(double surface, double price, String location, Integer floor, boolean elevator) {
-        this.surface = surface;
-        this.price = price;
-        this.location = location;
+    public Apartment(double surface, double price, String location, Integer floor, boolean elevator) {
+        super(surface, price, location, "apartment");
         this.floor = floor;
         this.elevator = elevator;
-        this.type = "appartment";
     }
 
 

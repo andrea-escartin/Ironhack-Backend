@@ -1,39 +1,45 @@
 abstract class Building {
-    protected double surface;
-    protected double price;
-    protected String location;
-    protected String type;
+    private double surface;
+    private double price;
+    private String location;
+    private String type;
 
+    public Building(double surface, double price, String location, String type) {
+        this.surface = surface;
+        this.price = price;
+        this.location = location;
+        this.type = type;
+    }
 
-    public double getSurface() {
+    protected double getSurface() {
         return this.surface;
     }
 
-    public void setSurface(double surface) {
+    protected void setSurface(double surface) {
         this.surface = surface;
     }
 
-    public double getPrice() {
+    protected double getPrice() {
         return this.price;
     }
 
-    public void setPrice(double price) {
+    protected void setPrice(double price) {
         this.price = price;
     }
 
-    public String getLocation() {
+    protected String getLocation() {
         return this.location;
     }
 
-    public void setLocation(String location) {
+    protected void setLocation(String location) {
         this.location = location;
     }
 
-    public String getType() {
+    protected String getType() {
         return this.type;
     }
 
-    public void setType(String type) {
+    protected void setType(String type) {
         this.type = type;
     }
 
